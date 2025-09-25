@@ -8,7 +8,9 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-all": "npm install && cd frontend && npm install",
-    "dev-full": "concurrently \"npm run dev\" \"cd frontend && npm start\""
+    "dev-full": "concurrently \"npm run dev\" \"cd frontend && npm start\"",
+    "build": "cd frontend && npm install && npm run build",
+    "vercel-build": "npm run build"
   },
   "keywords": [
     "library",
@@ -57,6 +59,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "concurrently": "^7.6.0"
   }
 }

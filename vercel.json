@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "buildCommand": "npm run build",
+    "outputDirectory": "frontend/build",
+    "installCommand": "npm install && cd frontend && npm install",
+    "framework": null,
+    "functions": {},
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}
