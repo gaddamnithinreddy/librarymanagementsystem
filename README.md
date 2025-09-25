@@ -63,8 +63,8 @@ A comprehensive full-stack Library Management System built with React.js and Nod
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/library-management-system.git
-   cd library-management-system
+   git clone https://github.com/gaddamnithinreddy/librarymanagementsystem.git
+   cd librarymanagementsystem
    ```
 
 2. **Install backend dependencies**
@@ -234,7 +234,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Authors
 
-- **Your Name** - Initial work - [YourGitHub](https://github.com/yourusername)
+- **Nithin Reddy** - Initial work - [gaddamnithinreddy](https://github.com/gaddamnithinreddy)
 
 ## 🙏 Acknowledgments
 
@@ -246,7 +246,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Support
 
 If you have any questions or need help with setup, please:
-1. Check the [Issues](https://github.com/yourusername/library-management-system/issues) page
+1. Check the [Issues](https://github.com/gaddamnithinreddy/librarymanagementsystem/issues) page
 2. Create a new issue if your problem isn't already addressed
 3. Provide detailed information about your setup and the issue
 

@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/library-management-system.git"
+    "url": "https://github.com/gaddamnithinreddy/librarymanagementsystem.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/library-management-system/issues"
+    "url": "https://github.com/gaddamnithinreddy/librarymanagementsystem/issues"
   },
-  "homepage": "https://github.com/yourusername/library-management-system#readme",
+  "homepage": "https://github.com/gaddamnithinreddy/librarymanagementsystem#readme",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

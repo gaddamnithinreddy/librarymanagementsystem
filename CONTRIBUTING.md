@@ -27,9 +27,9 @@ Pull requests are the best way to propose changes to the codebase. We actively w
 
 In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report bugs using GitHub's [Issues](https://github.com/yourusername/library-management-system/issues)
+## Report bugs using GitHub's [Issues](https://github.com/gaddamnithinreddy/librarymanagementsystem/issues)
 
-We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/yourusername/library-management-system/issues/new); it's that easy!
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/gaddamnithinreddy/librarymanagementsystem/issues/new); it's that easy!
 
 **Great Bug Reports** tend to have:
 
@@ -44,7 +44,7 @@ We use GitHub issues to track public bugs. Report a bug by [opening a new issue]
 ## Development Setup
 
 1. Fork the repo
-2. Clone your fork: `git clone https://github.com/yourusername/library-management-system.git`
+2. Clone your fork: `git clone https://github.com/yourusername/librarymanagementsystem.git`
 3. Install dependencies: `npm run install-all`
 4. Create a `.env` file based on `.env.example`
 5. Start development servers: `npm run dev-full`
