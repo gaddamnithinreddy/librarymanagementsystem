@@ -29,7 +29,7 @@ export default function AdminBooks() {
   const adminToken = localStorage.getItem('adminToken');
   const { darkMode, theme } = useTheme();
 
-  useEffect(() => { 
+  useEffect(() => {
     const fetchBooks = () => {
       setLoading(true);
       fetch('http://localhost:3001/admin/books', { headers: { token: adminToken } })
@@ -43,8 +43,8 @@ export default function AdminBooks() {
           setLoading(false);
         });
     };
-    
-    fetchBooks(); 
+
+    fetchBooks();
   }, [adminToken]);
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
