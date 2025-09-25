@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import Fade from '@mui/material/Fade';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { useTheme } from './ThemeContext';
+import API_BASE_URL from './config';
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -24,7 +25,7 @@ export default function AdminLogin() {
     e.preventDefault();
     setError('');
     try {
-      const res = await fetch('http://localhost:3001/admin/signin', {
+      const res = await fetch(`${API_BASE_URL}/admin/signin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })

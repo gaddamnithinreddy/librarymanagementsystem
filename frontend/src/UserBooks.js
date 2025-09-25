@@ -26,6 +26,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeContext';
+import API_BASE_URL from './config';
 
 const placeholderImg = 'https://via.placeholder.com/120x160?text=No+Image';
 
@@ -47,7 +48,7 @@ export default function UserBooks() {
   useEffect(() => {
     setShow(true);
     Promise.all([
-      fetch('http://localhost:3001/book/all').then(res => res.json()),
+      fetch(`${API_BASE_URL}/book/all`).then(res => res.json()),
       fetchFavorites(),
       fetchWishlist()
     ])
@@ -66,7 +67,7 @@ export default function UserBooks() {
     const token = localStorage.getItem('userToken');
     if (!token) return;
     try {
-      const response = await fetch('http://localhost:3001/user/favorites', {
+      const response = await fetch(`${API_BASE_URL}/user/favorites`, {
         headers: { 'token': token }
       });
       const data = await response.json();
@@ -83,7 +84,7 @@ export default function UserBooks() {
     const token = localStorage.getItem('userToken');
     if (!token) return;
     try {
-      const response = await fetch('http://localhost:3001/user/wishlist', {
+      const response = await fetch(`${API_BASE_URL}/user/wishlist`, {
         headers: { 'token': token }
       });
       const data = await response.json();
@@ -114,7 +115,7 @@ export default function UserBooks() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:3001/book/borrow', {
+      const res = await fetch(`${API_BASE_URL}/book/borrow`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -157,7 +158,7 @@ export default function UserBooks() {
           setMessage('Removed from favorites');
         }
       } else {
-        const response = await fetch('http://localhost:3001/user/favorites', {
+        const response = await fetch(`${API_BASE_URL}/user/favorites`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -197,7 +198,7 @@ export default function UserBooks() {
           setMessage('Removed from wishlist');
         }
       } else {
-        const response = await fetch('http://localhost:3001/user/wishlist', {
+        const response = await fetch(`${API_BASE_URL}/user/wishlist`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -223,7 +224,7 @@ export default function UserBooks() {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/book/rate', {
+      const response = await fetch(`${API_BASE_URL}/book/rate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -243,7 +244,7 @@ export default function UserBooks() {
         // Hide the success indicator after 2 seconds
         setTimeout(() => setSubmittedRating(null), 2000);
         // Refresh books to get updated ratings
-        const booksResponse = await fetch('http://localhost:3001/book/all');
+        const booksResponse = await fetch(`${API_BASE_URL}/book/all`);
         const booksData = await booksResponse.json();
         setBooks(booksData.books || []);
         setFilteredBooks(booksData.books || []);
