@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from './config';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -26,7 +27,6 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeContext';
-import API_BASE_URL from './config';
 
 const placeholderImg = 'https://via.placeholder.com/120x160?text=No+Image';
 
@@ -145,7 +145,7 @@ export default function UserBooks() {
 
     try {
       if (favorites.has(bookId)) {
-        const response = await fetch(`http://localhost:3001/user/favorites/${bookId}`, {
+        const response = await fetch(`${API_BASE_URL}/user/favorites/${bookId}`, {
           method: 'DELETE',
           headers: { 'token': token }
         });
@@ -185,7 +185,7 @@ export default function UserBooks() {
 
     try {
       if (wishlist.has(bookId)) {
-        const response = await fetch(`http://localhost:3001/user/wishlist/${bookId}`, {
+        const response = await fetch(`${API_BASE_URL}/user/wishlist/${bookId}`, {
           method: 'DELETE',
           headers: { 'token': token }
         });

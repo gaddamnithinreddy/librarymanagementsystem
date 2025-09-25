@@ -17,6 +17,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from './ThemeContext';
+import API_BASE_URL from './config';
 
 export default function AdminBooks() {
   const [books, setBooks] = useState([]);
@@ -32,7 +33,7 @@ export default function AdminBooks() {
   useEffect(() => {
     const fetchBooks = () => {
       setLoading(true);
-      fetch('http://localhost:3001/admin/books', { headers: { token: adminToken } })
+      fetch(`${API_BASE_URL}/admin/books`, { headers: { token: adminToken } })
         .then(res => res.json())
         .then(data => {
           setBooks(data.books || []);
@@ -53,7 +54,7 @@ export default function AdminBooks() {
     e.preventDefault();
     setError(''); setMessage('');
     try {
-      const res = await fetch('http://localhost:3001/admin/book', {
+      const res = await fetch(`${API_BASE_URL}/admin/book`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', token: adminToken },
         body: JSON.stringify(form)
@@ -77,7 +78,7 @@ export default function AdminBooks() {
     e.preventDefault();
     setError(''); setMessage('');
     try {
-      const res = await fetch('http://localhost:3001/admin/book', {
+      const res = await fetch(`${API_BASE_URL}/admin/book`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', token: adminToken },
         body: JSON.stringify({ ...form, bookId: editId })
@@ -96,7 +97,7 @@ export default function AdminBooks() {
   const handleDelete = async id => {
     setError(''); setMessage('');
     try {
-      const res = await fetch('http://localhost:3001/admin/book', {
+      const res = await fetch(`${API_BASE_URL}/admin/book`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json', token: adminToken },
         body: JSON.stringify({ bookId: id })

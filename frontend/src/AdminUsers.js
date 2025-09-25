@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from './config';
 
 export default function AdminUsers() {
   const [users, setUsers] = useState([]);
@@ -13,7 +14,7 @@ export default function AdminUsers() {
       setLoading(false);
       return;
     }
-    fetch('http://localhost:3001/admin/users', { headers: { token: adminToken } })
+    fetch(`${API_BASE_URL}/admin/users`, { headers: { token: adminToken } })
       .then(res => res.json())
       .then(data => {
         setUsers(data.users || []);

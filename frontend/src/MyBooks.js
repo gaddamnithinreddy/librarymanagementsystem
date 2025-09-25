@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import API_BASE_URL from './config';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -77,7 +78,7 @@ export default function MyBooks() {
   useEffect(() => {
     setShow(true);
     const token = localStorage.getItem('userToken');
-    fetch('http://localhost:3001/user/borrowed', {
+    fetch(`${API_BASE_URL}/user/borrowed`, {
       headers: { token }
     })
       .then(res => res.json())
@@ -101,7 +102,7 @@ export default function MyBooks() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:3001/book/return', {
+      const res = await fetch(`${API_BASE_URL}/book/return`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
