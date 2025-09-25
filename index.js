@@ -16,7 +16,12 @@ const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
 // Enable CORS for all requests
 app.use(cors({
-    origin: FRONTEND_URL,
+    origin: [
+        FRONTEND_URL,
+        "http://localhost:3000",
+        "https://librarymanagementsystem.vercel.app",
+        /\.vercel\.app$/  // Allow all Vercel preview deployments
+    ],
     credentials: true
 }));
 
@@ -36,7 +41,7 @@ async function main() {
 
         app.listen(PORT, () => {
             console.log(`🚀 Server running on port ${PORT}`);
-            console.log(`📱 Frontend URL: ${FRONTEND_URL}`);
+            console.log(`🌐 CORS enabled for: ${FRONTEND_URL}`);
         });
     } catch (error) {
         console.error("❌ Database connection failed:", error);
