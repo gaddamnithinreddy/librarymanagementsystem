@@ -18,7 +18,7 @@ const floatingBooks = [
 ];
 
 export default function HeroSection() {
-  const { darkMode, theme } = useTheme();
+  const { darkMode } = useTheme();
 
   return (
     <Box

@@ -12,9 +12,7 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '@fontsource/poppins/600.css';
 import { useTheme } from './ThemeContext';
 
@@ -29,7 +27,6 @@ export default function Navbar() {
   const location = useLocation();
   const { darkMode, toggleDarkMode, theme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!mobileMenuOpen);

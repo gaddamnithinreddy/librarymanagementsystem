@@ -29,21 +29,23 @@ export default function AdminBooks() {
   const adminToken = localStorage.getItem('adminToken');
   const { darkMode, theme } = useTheme();
 
-  const fetchBooks = () => {
-    setLoading(true);
-    fetch('http://localhost:3001/admin/books', { headers: { token: adminToken } })
-      .then(res => res.json())
-      .then(data => {
-        setBooks(data.books || []);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError('Failed to load books');
-        setLoading(false);
-      });
-  };
-
-  useEffect(() => { fetchBooks(); }, [message]);
+  useEffect(() => { 
+    const fetchBooks = () => {
+      setLoading(true);
+      fetch('http://localhost:3001/admin/books', { headers: { token: adminToken } })
+        .then(res => res.json())
+        .then(data => {
+          setBooks(data.books || []);
+          setLoading(false);
+        })
+        .catch(() => {
+          setError('Failed to load books');
+          setLoading(false);
+        });
+    };
+    
+    fetchBooks(); 
+  }, [adminToken]);
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
