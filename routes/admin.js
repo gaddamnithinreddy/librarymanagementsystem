@@ -122,9 +122,10 @@ adminRouter.delete("/book", adminMiddleware, async function (req, res) {
     res.json({ message: "Book deleted" });
 });
 
-// List all books
+// List books created by the current admin
 adminRouter.get("/books", adminMiddleware, async function (req, res) {
-    const books = await bookModel.find({});
+    const adminId = req.userId;
+    const books = await bookModel.find({ addedBy: adminId });
     res.json({ books });
 });
 

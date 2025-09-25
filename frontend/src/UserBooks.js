@@ -317,9 +317,9 @@ export default function UserBooks() {
               </Typography>
             </Box>
           ) : (
-            <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} justifyContent="center" sx={{ px: { xs: 1, sm: 0 } }}>
+            <Grid container spacing={{ xs: 1.5, sm: 2, md: 3 }} justifyContent="center" sx={{ px: { xs: 1, sm: 2, md: 0 } }}>
               {filteredBooks.map(book => (
-                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={book._id}>
+                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 2.4 }} key={book._id}>
                   <motion.div
                     whileHover={{ scale: 1.04, boxShadow: '0 8px 32px 0 rgba(80,120,255,0.13)' }}
                     style={{ height: '100%' }}
@@ -327,7 +327,7 @@ export default function UserBooks() {
                     <Card
                       elevation={0}
                       sx={{
-                        height: { xs: 380, sm: 400, md: 420 },
+                        height: { xs: 360, sm: 380, md: 400 },
                         display: 'flex',
                         flexDirection: 'column',
                         borderRadius: 4,
@@ -345,7 +345,7 @@ export default function UserBooks() {
                       }}
                     >
                       <Box sx={{
-                        height: { xs: 160, sm: 170, md: 180 },
+                        height: { xs: 140, sm: 150, md: 160 },
                         background: '#f5f5f5',
                         display: 'flex',
                         alignItems: 'center',
@@ -358,7 +358,7 @@ export default function UserBooks() {
                           style={{
                             width: 'auto',
                             height: '100%',
-                            maxHeight: { xs: 160, sm: 170, md: 180 },
+                            maxHeight: { xs: 140, sm: 150, md: 160 },
                             maxWidth: '100%',
                             objectFit: 'cover',
                             transition: 'transform 0.3s',
@@ -372,15 +372,15 @@ export default function UserBooks() {
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'space-between',
-                        p: { xs: 1.5, sm: 2 }
+                        p: { xs: 1.2, sm: 1.5, md: 2 }
                       }}>
                         <Box>
                           <Box display="flex" alignItems="center" justifyContent="space-between" mb={1}>
                             <Box display="flex" alignItems="center" gap={1}>
                               <BookIcon color="primary" />
                               <Typography variant="h6" fontWeight={600} noWrap sx={{
-                                maxWidth: { xs: 150, sm: 180, md: 200 },
-                                fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' }
+                                maxWidth: { xs: 120, sm: 140, md: 160, lg: 180 },
+                                fontSize: { xs: '0.9rem', sm: '1rem', md: '1.125rem' }
                               }}>{book.title}</Typography>
                             </Box>
                             <Box display="flex" gap={0.5}>
@@ -425,8 +425,8 @@ export default function UserBooks() {
                             />
                           )}
 
-                          <Typography variant="body2" sx={{ mb: 1, minHeight: 48, color: darkMode ? '#e2e8f0' : '#555' }}>
-                            {book.description?.length > 80 ? book.description.slice(0, 80) + '...' : book.description}
+                          <Typography variant="body2" sx={{ mb: 1, minHeight: { xs: 36, sm: 40, md: 44 }, color: darkMode ? '#e2e8f0' : '#555' }}>
+                            {book.description?.length > 60 ? book.description.slice(0, 60) + '...' : book.description}
                           </Typography>
 
                           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>

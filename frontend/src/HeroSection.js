@@ -141,10 +141,12 @@ export default function HeroSection() {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: { xs: 8, sm: 12, md: 16 },
+            gap: { xs: 3, sm: 2, md: 3 },
             flexWrap: 'wrap',
             flexDirection: { xs: 'column', sm: 'row' },
-            alignItems: 'center'
+            alignItems: 'center',
+            maxWidth: { xs: '100%', sm: 'none' },
+            width: { xs: '100%', sm: 'auto' }
           }}
         >
           <AnimatedButton to="/login" icon={<LoginIcon />} color="primary">
@@ -205,9 +207,10 @@ function AnimatedButton({ to, icon, color, children }) {
           overflow: 'hidden',
           transition: 'background 0.3s, color 0.3s',
           fontSize: { xs: '0.875rem', sm: '1rem' },
-          minWidth: { xs: 200, sm: 'auto' },
+          minWidth: { xs: 220, sm: 'auto' },
           width: { xs: '100%', sm: 'auto' },
-          maxWidth: { xs: 280, sm: 'none' },
+          maxWidth: { xs: 320, sm: 'none' },
+          mb: { xs: 0.5, sm: 0 },
           '&:hover': {
             background: color === 'secondary'
               ? (darkMode
